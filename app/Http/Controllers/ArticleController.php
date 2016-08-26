@@ -15,9 +15,18 @@ class ArticleController extends Controller{
         $article = new Article();
         $user = Auth::user();
         //echo $user;
-        $article->posterId = $user->id;        //$request['posterId'];
-        $article->type = $request['title'];
+        $article->posterId = $user->id;
+        $article->title = $request['title'];
+        // type 1 is an article type 2 is an comment
+        if($user->role_id == 3){
+            $article->type = 1;
+        }
+        else{
+            $article->type = 2;
+        }
         $article->article = $request['article'];
+        // default like num is 0
+        $article->liked = 0;
         $article->save();
         return redirect()->route('myarticle');
     }
@@ -29,10 +38,36 @@ class ArticleController extends Controller{
 
     }
 
-    public function getInvestorArticle(){
-
+    public function getMyArticle(){
+        $user = Auth::user();
+        $article = Article::where('posterId', $user->id)->get();
+        return view('investorPov' , ['article' => $article]);
 
     }
+
+    public function getRankedArticle(){
+        $article = Article::orderBy('liked')->take(10)->get();
+        return view('investorPov' , ['article' => $article]);
+    }
+
+    public function deleteArticle( $article_id){
+        $article = Article::where('id' , $article_id)->first();
+        $article->delete();
+        return view('investorPov');
+
+    }
+
+
+    public function likeArticle( $article_id){
+        $article = Article::where('id' , $article_id)->first();
+        $article_num = $article->liked;
+        $article->liked = $article_num +1 ;
+        $article->save();
+        return view('investorPov',['article' => Article::all()]);
+
+    }
+
+
 /**
     public function deleteProduct( $product_id){
         $product = product::where('id' , $product_id)->first();

@@ -25,32 +25,20 @@ class ProductController extends Controller
         $product_id = $product->id;
         $user->product()->attach($product_id);
 
-        return redirect()->route('investorProducts');
+        return redirect()->route('myproduct');
     }
 
 
-    public function clientGetProduct(){
+    public function getMyProduct(){
         $user = Auth::user();
        $products = $user->product;
-        return view('productRank' , ['products' => $products]);
+        return view('myproduct' , ['products' => $products]);
 
-    }
-
-    public function investorGetProduct(){
-        $user = Auth::user();
-        //$products = Product::find();
-
-        $products = $user->product;
-
-        return view('product' , ['products' => $products]);
     }
 
     public function getAllProducts(){
         $products = Product::all();
-        $user = Auth::user();
-        if($user->role_id == '2' || $user->role_id == '1' || $user->role_id = '3'){
-            return view('product' , ['products' => $products]);
-        }
+
         return view('productRank' , ['products' => $products]);
     }
 
@@ -60,12 +48,10 @@ class ProductController extends Controller
         return redirect()->route('investorProducts');
     }
 
+
     public function rankProduct(){
         $products = Product::orderBy('product_return_rate' ,'desc')->take(10)->get();
-        $user = Auth::user();
-        if($user->role_id == '2' || $user->role_id == '1' || $user->role_id = '3'){
-            return view('product' , ['products' => $products]);
-        }
+
         return view('productRank' , ['products' => $products]);
 
 

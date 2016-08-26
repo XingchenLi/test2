@@ -21,8 +21,8 @@ Route::group(
     });
 
     Route::get('/home', [
-        'uses' => 'HomeController@index',
-        'as' => 'home'
+        'as' => 'home',
+        'uses' => 'HomeController@index'
     ]);
 
     Route::get('/investor', [
@@ -43,10 +43,20 @@ Route::group(
         'as' => 'productInfo',
         'uses' => 'ProductController@createProduct']);
 
+
     Route::get('/deleteproduct/{product_id}' , [
         'uses' => 'ProductController@deleteProduct',
          'as' => 'deleteProduct'
     ]);
+    Route::get('/deleteArticle/{article_id}' , [
+        'uses' => 'ArticleController@deleteArticle',
+        'as' => 'deleteArticle'
+    ]);
+    Route::get('/likedArticle/{article_id}', [
+        'uses' => 'ArticleController@likeArticle',
+        'as' => 'likeArticle'
+
+        ]);
 
     Route::get('/changePassword', [
         'as' => 'changePassword',
@@ -73,7 +83,7 @@ Route::group(
         'roles' => ['admin' ,'Investor'] // only administrator or a manager can access this route
     ]);
     Route::get('/myproduct' ,[
-        'uses' => 'ProductController@clientGetProduct',
+        'uses' => 'ProductController@getMyProduct',
          'as' => 'myproduct'
     ]);
 
@@ -86,7 +96,7 @@ Route::group(
 
     Route::get('/myarticle' ,[
         'as' => 'myarticle',
-        'uses' => 'ArticleController@getAllArticle'
+        'uses' => 'ArticleController@getMyArticle'
 
     ]);
 
@@ -115,6 +125,27 @@ Route::group(
     Route::get('rankedProduct',[
        'as' => 'rankedProduct',
         'uses' => 'ProductController@rankProduct'
+    ]);
+
+    Route::get('aboutus' ,[
+        'as' => 'aboutus',
+        function(){
+        return view('aboutus');
+        }
+    ]);
+
+    Route::get('career' ,[
+        'as' => 'career',
+        function(){
+            return view('career');
+        }
+    ]);
+
+    Route::get('uploadProduct',[
+        'as' => 'uploadProduct',
+        function(){
+        return view('productInput');
+        }
     ]);
 
 

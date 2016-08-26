@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use Illuminate\Http\Request;
+use App\product;
+use App\Article;
 
 class HomeController extends Controller
 {
@@ -12,10 +14,6 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
     /**
      * Show the application dashboard.
@@ -24,6 +22,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('client');
+        $products = Product::orderBy('product_return_rate' ,'desc')->take(10)->get();
+        $article = Article::orderBy('liked' , 'desc')->take(10)->get();
+        $passdata = array($products ,$article);
+
+        return view('home',['passdata' => $passdata]);
     }
+
 }

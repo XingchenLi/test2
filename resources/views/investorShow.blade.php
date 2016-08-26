@@ -1,7 +1,7 @@
-@extends('investor')
+@extends('layouts.product')
 
 
-@section('content3')
+@section('content')
     <div>
 
         <div class="jumbotron">

@@ -2,7 +2,7 @@
 
 
 @section('content')
-    <div class="col-md-6">
+    <div class="col-md-10">
 
         <!--    Striped Rows Table  -->
         <div class="panel panel-default">
@@ -21,12 +21,11 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($products as $product)
+                        @foreach($article as $articles)
                             <tr>
-                                <td>{{$product->product_name}}</td>
-                                <td>{{$product->product_return_rate}} %</td>
-                                <td>{{$product->product_number}}</td>
-                                <td>{{date('m/d/Y', strtotime($product->created_at))}}</td>
+                                <td>{{$articles->title}}</td>
+                                <td>{{$articles->liked}} %</td>
+                                <td>{{date('m/d/Y', strtotime($articles->created_at))}}</td>
                                 <td><button type="button" class="btn btn-info">查看</button></td>
                             </tr>
                         @endforeach

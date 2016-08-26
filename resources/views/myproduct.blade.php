@@ -2,8 +2,7 @@
 
 
 @section('content')
-    <div class="col-md-6">
-
+    <div class="col-md-10">
         <!--    Striped Rows Table  -->
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -37,6 +36,7 @@
             </div>
         </div>
         <!--  End  Striped Rows Table  -->
+
     </div>
 
 
