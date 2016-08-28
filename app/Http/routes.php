@@ -148,6 +148,20 @@ Route::group(
         }
     ]);
 
+    Route::get('articleDetail' ,[
+        'as' => 'articleDetail',
+        function(){
+        return view('articleDetail');
+        }
+    ]);
+
+    Route::get('inputProduct', [
+        'as' => 'inputProduct',
+        function(){
+        return view('inputProduct');
+        }
+    ]);
+
 
 
 
