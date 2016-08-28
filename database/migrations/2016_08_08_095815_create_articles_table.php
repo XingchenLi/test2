@@ -15,8 +15,10 @@ class CreateArticlesTable extends Migration
         Schema::create('articles', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('posterId');
+            $table->string('title');
             $table->longText('type');
             $table->longText('article');
+            $table->integer('liked');
             $table->timestamps();
         });
     }
