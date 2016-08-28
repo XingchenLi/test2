@@ -85,7 +85,7 @@
                         <a href="#"><i class="fa fa-flash "></i>我们的投顾 </a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-flash "></i>投资知识大讲堂 </a>
+                        <a href="{{route('articleDetail')}}"><i class="fa fa-flash "></i>投资知识大讲堂 </a>
                     </li>
                 @elseif(Auth::user()->role_id == 4)
 
@@ -184,19 +184,8 @@
 
                 @else
                     <li>
-                        <a href="#"><i class="fa fa-desktop "></i>管理用户 <span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="panel-tabs.html"><i class="fa fa-toggle-on"></i>更改用户密码</a>
-                            </li>
-                            <li>
-                                <a href="notification.html"><i class="fa fa-bell "></i>更改用户角色</a>
-                            </li>
-                            <li>
-                                <a href="progress.html"><i class="fa fa-circle-o "></i>更改用户信息</a>
-                            </li>
+                        <a href="#"><i class="fa fa-desktop "></i>等待管理员更改权限 <span class="fa arrow"></span></a>
 
-                        </ul>
                     </li>
 
                 @endif
