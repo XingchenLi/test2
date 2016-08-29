@@ -45,36 +45,45 @@
                 </div>
             </div>
 
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <div class="form-group">
                     <label for="title"> 成立日期</label>
                     <input class="form-control" type="text" name="title" id="title">
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <div class="form-group">
                     <label for="title"> 最新规模</label>
                     <input class="form-control" type="text" name="title" id="title">
                 </div>
             </div>
-            <div class="col-md-3">
-            <div class="form-group">
-                <label for="title"> 管理经理人</label>
-                <input class="form-control" type="text" name="title" id="title">
-            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="title"> 管理经理人</label>
+                    <input class="form-control" type="text" name="title" id="title">
                 </div>
-            <div class="form-group">
-                <label for="title"> 累计单位净值</label>
-                <input class="form-control" type="text" name="title" id="title">
             </div>
-            <div class="form-group">
-                <label for="title"> 累计分红</label>
-                <input class="form-control" type="text" name="title" id="title">
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="title"> 累计单位净值</label>
+                    <input class="form-control" type="text" name="title" id="title">
+                </div>
             </div>
-            <div class="form-group">
-                <label for="title"> 基金经理</label>
-                <input class="form-control" type="text" name="title" id="title">
+            <div class="col-md-4">
+
+                <div class="form-group">
+                    <label for="title"> 累计分红</label>
+                    <input class="form-control" type="text" name="title" id="title">
+                </div>
             </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="title"> 基金经理</label>
+                    <input class="form-control" type="text" name="title" id="title">
+                </div>
+            </div>
+            <hr>
             <hr>
             <div class="form-group">
                 <label for="title">基金全称 </label>
