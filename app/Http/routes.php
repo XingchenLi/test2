@@ -162,6 +162,13 @@ Route::group(
         }
     ]);
 
+    Route::get('productDetail' ,[
+        'as' =>'productDetail',
+        function(){
+        return view('productDetail');
+        }
+    ]);
+
 
 
 
