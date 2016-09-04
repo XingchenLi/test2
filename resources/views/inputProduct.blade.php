@@ -216,12 +216,7 @@
                     <input class="form-control" type="text" name="title" id="title">
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="form-group">
-                    <label for="title"> 投资范围</label>
-                    <input class="form-control" type="text" name="title" id="title">
-                </div>
-            </div>
+
             <div class="col-md-12">
                 <div class="form-group">
                     <label for="article"> 投资范围</label>
